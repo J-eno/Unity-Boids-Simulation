@@ -42,21 +42,22 @@ public class BoidMovement : MonoBehaviour
             center = GoToCenter(neighbors);
             matchedVel = MatchVelocity(neighbors);
             avoidedCol = AvoidCollision(neighbors);
+            Vector2 currDirection = ourDirection;
             ourDirection = _rb.velocity + center + matchedVel + avoidedCol;
             //look in travel direction
             float angle = Mathf.Atan2(ourDirection.x, ourDirection.y) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle, -Vector3.forward);
             CheckBounds();
-            if(ourDirection.x > 4f) {
+            if(ourDirection.x >= 4f) {
                 ourDirection.x = 4f;
             }
-            if(ourDirection.x < -4f) {
+            if(ourDirection.x <= -4f) {
                 ourDirection.x = -4f;
             }
-            if(ourDirection.y > 4f) {
+            if(ourDirection.y >= 4f) {
                 ourDirection.y = 4f;
             }
-            if(ourDirection.y < -4f) {
+            if(ourDirection.y <= -4f) {
                 ourDirection.y = -4f;
             }
             _rb.velocity = ourDirection;
@@ -74,41 +75,41 @@ public class BoidMovement : MonoBehaviour
         if (distanceMax.x < 3 && distanceMax.x > 0)
         {
             //ourDirection.x = Mathf.Abs(ourDirection.x) * -1 / 2;
-            ourDirection.x -= (1/distanceMax.x)/50;
+            ourDirection.x -= (1/distanceMax.x)/10;
         }
         else if(distanceMax.x < 0)
         {
-             ourDirection.x += (distanceMax.x)/50;
+             ourDirection.x += (distanceMax.x)/10;
         }
         //MIN X
         if (distanceMin.x > -3  && distanceMin.x < 0)
         {
             //ourDirection.x = Mathf.Abs(ourDirection.x) / 2;
-            ourDirection.x -= (1/distanceMin.x)/50;
+            ourDirection.x -= (1/distanceMin.x)/10;
         }
         else if(distanceMin.x > 0)
         {
-             ourDirection.x += (distanceMin.x)/50;
+             ourDirection.x += (distanceMin.x)/10;
         }
         //MAX Y
         if (distanceMax.y < 3 && distanceMax.y > 0)
         {
             //ourDirection.y = Mathf.Abs(forcesY.y) * -1 / 2;
-            ourDirection.y -= (1/distanceMax.y)/50;
+            ourDirection.y -= (1/distanceMax.y)/10;
         }
          else if(distanceMax.y < 0)
         {
-             ourDirection.y += (distanceMax.y)/50;
+             ourDirection.y += (distanceMax.y)/10;
         }
         //MIN Y
         if (distanceMin.y > -3  && distanceMin.y < 0)
         {
             //ourDirection.y = Mathf.Abs(ourDirection.y) / 2;
-            ourDirection.y -= (1/distanceMin.y)/50;
+            ourDirection.y -= (1/distanceMin.y)/10;
         }
         else if(distanceMin.y > 0)
         {
-             ourDirection.y += (distanceMin.y)/50;
+             ourDirection.y += (distanceMin.y)/10;
         }
     }
 
