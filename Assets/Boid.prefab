@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3251430497031823927}
   - component: {fileID: 3251430497031823880}
+  - component: {fileID: 7376500704092446723}
   - component: {fileID: 3251430497031823881}
   - component: {fileID: 3251430497031823925}
   - component: {fileID: 3251430497031823926}
@@ -48,6 +49,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 0}
+--- !u!114 &7376500704092446723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3251430497031823882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d6d38b34b546a24a8df19b15a1f0c5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &3251430497031823881
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -87,7 +100,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c9ddad99c8ffc334c8f73f3c6e1c6a26, type: 3}
+  m_Sprite: {fileID: 344675365535827205, guid: d2f3a759e9c363748b32aaf08d4cfefa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
