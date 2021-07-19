@@ -39,6 +39,7 @@
      <Compile Include="Assets\BoidMovement.cs" />
      <Compile Include="Assets\CameraController.cs" />
      <Compile Include="Assets\HealthController.cs" />
+     <Compile Include="Assets\InputController.cs" />
      <Compile Include="Assets\SpawnBoids.cs" />
      <Compile Include="Assets\TheBrain.cs" />
      <Compile Include="Assets\UIController.cs" />

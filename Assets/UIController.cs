@@ -82,11 +82,13 @@ public class UIController : MonoBehaviour
         if(addBoidsToggle.isOn)
         {
             addBoidsIcon.sprite = icons["addboidwhite"];
-            addBoidsToggle.GetComponent<Image>().sprite = backgrounds["blueblock"];  
+            addBoidsToggle.GetComponent<Image>().sprite = backgrounds["blueblock"];
+            TheBrain.AlmightyBrain._ic.cursorMode = InputController.CursorMode.AddBoids; 
         }
         else {
             addBoidsIcon.sprite = icons["addboidblue"];
-            addBoidsToggle.GetComponent<Image>().sprite = backgrounds["blueoutline"];   
+            addBoidsToggle.GetComponent<Image>().sprite = backgrounds["blueoutline"];
+            CheckCursorMode();   
         }
     }
 
@@ -94,11 +96,13 @@ public class UIController : MonoBehaviour
         if(removeBoidsToggle.isOn)
         {
             removeBoidsIcon.sprite = icons["removeboidwhite"];
-            removeBoidsToggle.GetComponent<Image>().sprite = backgrounds["blueblock"];  
+            removeBoidsToggle.GetComponent<Image>().sprite = backgrounds["blueblock"];
+            TheBrain.AlmightyBrain._ic.cursorMode = InputController.CursorMode.RemoveBoids;  
         }
         else {
             removeBoidsIcon.sprite = icons["removeboidblue"];
             removeBoidsToggle.GetComponent<Image>().sprite = backgrounds["blueoutline"];   
+            CheckCursorMode();
         }
     }
 
@@ -107,10 +111,12 @@ public class UIController : MonoBehaviour
         {
             addPredatorIcon.sprite = icons["addpredwhite"];
             addPredatorToggle.GetComponent<Image>().sprite = backgrounds["redblock"];  
+            TheBrain.AlmightyBrain._ic.cursorMode = InputController.CursorMode.AddPredator;
         }
         else {
             addPredatorIcon.sprite = icons["addpredred"];
             addPredatorToggle.GetComponent<Image>().sprite = backgrounds["redoutline"];   
+            CheckCursorMode();
         }
     }
 
@@ -119,14 +125,26 @@ public void ToggleAddFood() {
         if(addFoodToggle.isOn)
         {
             addFoodIcon.sprite = icons["addfoodwhite"];
-            addFoodToggle.GetComponent<Image>().sprite = backgrounds["greenblock"];  
+            addFoodToggle.GetComponent<Image>().sprite = backgrounds["greenblock"];
+            TheBrain.AlmightyBrain._ic.cursorMode = InputController.CursorMode.AddFood;  
         }
         else {
             addFoodIcon.sprite = icons["addfoodgreen"];
             addFoodToggle.GetComponent<Image>().sprite = backgrounds["greenoutline"];   
+            CheckCursorMode();
         }
     }
 
+    void CheckCursorMode() {
+        //check if at least one button is toggled on
+        bool toggled = addBoidsToggle.isOn 
+                        || removeBoidsToggle.isOn 
+                        || addPredatorToggle.isOn
+                        || addFoodToggle.isOn;
+        if(!toggled) {
+            TheBrain.AlmightyBrain._ic.cursorMode = InputController.CursorMode.Default;
+        }
+    }
 
     void SetupDictionaries() {
         backgrounds["blueoutline"] = backgroundSprites[0];

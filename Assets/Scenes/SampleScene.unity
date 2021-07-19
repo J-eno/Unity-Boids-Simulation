@@ -1046,7 +1046,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1853,7 +1853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.41960785}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2276,6 +2276,7 @@ GameObject:
   - component: {fileID: 1614618214}
   - component: {fileID: 1614618213}
   - component: {fileID: 1614618215}
+  - component: {fileID: 1614618216}
   m_Layer: 0
   m_Name: TheBrain
   m_TagString: Untagged
@@ -2352,8 +2353,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c11d6fc5603ec6547b2770b72b401439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uic: {fileID: 1614618213}
-  spawner: {fileID: 1614618215}
+  _uic: {fileID: 1614618213}
+  _spawner: {fileID: 1614618215}
+  _ic: {fileID: 1614618216}
 --- !u!114 &1614618215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2370,6 +2372,19 @@ MonoBehaviour:
     type: 3}
   SpawnAmount: 10
   SpawnSeconds: 2
+--- !u!114 &1614618216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614618211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83ac76e34a670664eba27206741b68c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorMode: 0
 --- !u!1 &1695066722
 GameObject:
   m_ObjectHideFlags: 0
@@ -2475,7 +2490,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' 50'
+  m_text: '25
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2547,7 +2564,7 @@ MonoBehaviour:
     characterCount: 3
     spriteCount: 0
     spaceCount: 1
-    wordCount: 2
+    wordCount: 1
     linkCount: 0
     lineCount: 1
     pageCount: 1
