@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class HealthController : MonoBehaviour
 {
-    private int maxHealth;
-    private int currentHealth;
+    public int maxHealth;
+    public int currentHealth;
     // Start is called before the first frame update
     void Start()
     {
         TheBrain.AlmightyBrain.DestroyAll += Die;
+        SetHealth(maxHealth);
     }
 
     public int GetHealth() {
@@ -17,6 +18,10 @@ public class HealthController : MonoBehaviour
     }
     public void SetHealth(int hp) {
         currentHealth = hp;
+    }
+
+    public void Heal() {
+        currentHealth++;
     }
     public void TakeDamage() {
         currentHealth--;
